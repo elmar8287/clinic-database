@@ -23,7 +23,7 @@
 
 This repository includes SQL files for creation of a database:
 
-- [schema_based_on_diagram.sql](./schema_based_on_diagram) to create all tables.
+- [schema_based_on_diagram.sql](./schema_based_on_diagram.sql) to create all tables.
 ## Author
 
 👤 **Elmar Abdulkarimov**
