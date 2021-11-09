@@ -16,7 +16,8 @@ CREATE TABLE medical_histories (
   id BIGSERIAL PRIMARY KEY,
   addmited_at TIMESTAMP,
   patient_id INT,
-  status VARCHAR
+  status VARCHAR,
+  FOREIGN KEY(patient_id) REFERENCES patients(patient_id)
 );
 
 CREATE TABLE invoice_items (
