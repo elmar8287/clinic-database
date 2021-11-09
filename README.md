@@ -23,9 +23,7 @@
 
 This repository includes SQL files for creation of a database:
 
-- [schema.sql](./schema.sql) to create all tables.
-- [data.sql](./data.sql) to populate tables with data.
-- [queries.sql](./queries.sql) list of queries
+- [schema_based_on_diagram.sql](./schema_based_on_diagram) to create all tables.
 ## Author
 
 👤 **Elmar Abdulkarimov**
