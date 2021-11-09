@@ -42,3 +42,11 @@ CREATE INDEX ON invoices (medical_history_id);
 CREATE INDEX ON medical_histories (patient_id);
 CREATE INDEX ON invoice_items (treatment_id);
 CREATE INDEX ON invoice_items (invoice_id);
+
+CREATE TABLE medical_histories_has_treatments (
+  id BIGSERIAL PRIMARY KEY,
+  medical_history_id INT,
+  treatment_id INT,
+  FOREIGN KEY(medical_history_id) REFERENCES medical_histories(id),
+  FOREIGN KEY(treatment_id) REFERENCES treatments(id)
+);
