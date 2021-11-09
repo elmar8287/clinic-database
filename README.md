@@ -7,7 +7,7 @@
 ## Tasks todo:
 
 - Create a file named schema_based_on_diagram.sql where will be implemented the database from the diagram.
-- Join tables from many-to-many relationships might not appear in the diagram, but  still be needed them.
+- Join tables from many-to-many relationships might not appear in the diagram, but still be needed them.
 - Add the FK indexes.
 
 ## Built using:
