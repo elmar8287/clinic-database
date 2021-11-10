@@ -4,21 +4,27 @@ CREATE TABLE patients (
   date_of_birth DATE
 );
 
+CREATE TABLE medical_histories (
+  id BIGSERIAL PRIMARY KEY,
+  addmited_at TIMESTAMP,
+  patient_id INT,
+  status VARCHAR,
+  FOREIGN KEY(patient_id) REFERENCES patients(id)
+);
+
 CREATE TABLE invoices (
   id BIGSERIAL PRIMARY KEY,
   total_amount DECIMAL,
   generated_at TIMESTAMP,
   payed_at TIMESTAMP,
   medical_history_id INT,
-  FOREIGN KEY(medical_history_id) REFERENCES medical_histories(medical_history_id)
+  FOREIGN KEY(medical_history_id) REFERENCES medical_histories(id)
 );
 
-CREATE TABLE medical_histories (
+CREATE TABLE treatments (
   id BIGSERIAL PRIMARY KEY,
-  addmited_at TIMESTAMP,
-  patient_id INT,
-  status VARCHAR,
-  FOREIGN KEY(patient_id) REFERENCES patients(patient_id)
+  type VARCHAR,
+  name VARCHAR
 );
 
 CREATE TABLE invoice_items (
@@ -28,14 +34,8 @@ CREATE TABLE invoice_items (
   total_price DECIMAL,
   invoice_id INT,
   treatment_id INT,
-  FOREIGN KEY(invoice_id) REFERENCES invoices(invoice_id),
-  FOREIGN KEY(treatment_id) REFERENCES treatments(treatment_id)
-);
-
-CREATE TABLE treatments (
-  id BIGSERIAL PRIMARY KEY,
-  type VARCHAR,
-  name VARCHAR
+  FOREIGN KEY(invoice_id) REFERENCES invoices(id),
+  FOREIGN KEY(treatment_id) REFERENCES treatments(id)
 );
 
 CREATE INDEX ON invoices (medical_history_id);
