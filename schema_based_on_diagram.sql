@@ -1,6 +1,7 @@
 CREATE TABLE patients (
   id BIGSERIAL PRIMARY KEY,
-  patient_name VARCHAR(150)
+  patient_name VARCHAR(150),
+  date_of_birth DATE
 );
 
 CREATE TABLE invoices (
